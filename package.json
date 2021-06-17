@@ -38,6 +38,6 @@
   "devDependencies": {
     "eslint": "^7.28.0",
     "eslint-plugin-react": "^7.24.0",
-    "sass": "^1.35.1"
+    "sass": "^1.32.13"
   }
 }
