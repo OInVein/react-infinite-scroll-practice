@@ -2,8 +2,9 @@
 
 .home {
   z-index: 20;
-  width: 100%;
-  height: 100%;
+  width: 80vmin;
+  height: 60vmin;
+  position: relative;
 
   @extend .flex-center-all;
   flex-direction: column;
@@ -13,6 +14,7 @@
 .button {
   @extend .flex-center-all;
   cursor: pointer;
+  position: absolute;
   font-size: 2rem;
   width: 18rem;
   height: 7rem;
@@ -24,10 +26,18 @@
   transition: all .1s;
   color: rgba(255, 255, 255, 0.5);
 
+  &:nth-child(1) {
+    top: 5.3rem;
+  }
+
+  &:nth-child(2) {
+    top: 13.3rem;
+  }
+
   &:hover {
     box-shadow: none;
     margin-left: .5em;
-    margin-top: .5em;
+    margin-top: .3em;
     color: rgba(255, 255, 255, 0.7);
     border-color: rgba(255, 255, 255, 0.7);
   }
