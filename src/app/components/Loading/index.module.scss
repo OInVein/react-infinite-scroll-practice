@@ -1,0 +1,12 @@
+@import '../../styles/base';
+
+.shimmer {
+  @extend .img-container;
+
+  &::after {
+    @extend .img-shape;
+
+    content: '';
+    background: rgba(246, 247, 249, 0.125);
+  }
+}

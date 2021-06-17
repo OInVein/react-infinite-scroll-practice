@@ -1,0 +1,22 @@
+@import '../../styles/base';
+
+.easterEgg {
+  font-size: 1rem;
+  position: absolute;
+  opacity: 0;
+}
+
+.img {
+  @extend .img-shape;
+
+  &:hover {
+    transform: scale(1.1);
+    transition: all .3s;
+    box-shadow: 0 0 .2rem .2rem #0090d8;
+    cursor: pointer;
+  }
+
+  &Container {
+    @extend .img-container;
+  }
+}

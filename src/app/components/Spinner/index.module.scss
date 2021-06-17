@@ -1,0 +1,72 @@
+@import '../../styles/base';
+
+.spinner {
+  content: '';
+  grid-row: span 2;
+  grid-column: span 6;
+  @extend .flex-center-all;
+
+  &Container {
+    width: 5rem;
+    height: 5rem;
+    position: relative;
+    @extend .flex-center-all;
+    animation: rotate 1s infinite;
+
+    &Ball {
+      width: 2rem;
+      height: 2rem;
+      position: absolute;
+      border-radius: 50%;
+
+      &:nth-child(1) {
+        top: 0;
+        background: linear-gradient(rgb(255, 79, 79, .3), rgb(255, 79, 79, .2));
+      }
+
+      &:nth-child(2) {
+        left: 0;
+        bottom: 0;
+        background: linear-gradient(rgba(19, 19, 255, .3), rgb(19, 19, 255, .2));
+      }
+
+      &:nth-child(3) {
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(rgb(255, 255, 0, .3), rgb(255, 255, 0, .2));
+      }
+    }
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .spinner {
+    grid-row: span 2;
+    grid-column: span 3;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .spinner {
+    grid-row: span 2;
+    grid-column: span 3;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .spinner {
+    grid-row: span 2;
+    grid-column: span 1;
+  }
+}

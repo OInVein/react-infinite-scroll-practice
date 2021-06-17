@@ -1,0 +1,111 @@
+@import '../../styles/base';
+
+.icon {
+  content: '';
+  display: block;
+  width: 100%;
+  height: .2rem;
+  background: rgb(180, 180, 180);
+  position: absolute;
+  border-radius: 10px;
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: all .3s;
+  @extend .flex-center-all;
+
+  & > div {
+    width: calc(100vmin * .8);
+    height: calc(100vmax * .4);
+    background: white;
+    border-radius: 10px;
+    animation: showUp .2s ease-in;
+  }
+
+  &Container {
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  &Title {
+    font-size: 1.2em;
+    height: 15%;
+    padding: 0 1rem;
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+
+    h1 {
+      height: calc(100% - .1rem);
+      display: flex;
+      align-items: center;
+    }
+
+    &::after {
+      content: '';
+      width: 100%;
+      height: .1rem;
+      background-color: lightgrey;
+    }
+
+    &Close {
+      position: absolute;
+      right: 1rem;
+      width: 2.5rem;
+      height: 2.5rem;
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        cursor: pointer;
+
+        &::before, &::after {
+          background: red;
+          transition: all .3s;
+        }
+      }
+
+      &::before {
+        @extend .icon;
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        @extend .icon;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  &Content {
+    font-size: 1.4em;
+    height: 85%;
+    padding: 1rem;
+    overflow-y: auto;
+  }
+}
+
+@keyframes showUp {
+  from {
+    opacity: 0;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.1);
+  }
+
+  to {
+    opacity: 1;
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+}
