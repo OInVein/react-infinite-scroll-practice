@@ -1,0 +1,34 @@
+@import '../../styles/base';
+
+.home {
+  z-index: 20;
+  width: 100%;
+  height: 100%;
+
+  @extend .flex-center-all;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.button {
+  @extend .flex-center-all;
+  cursor: pointer;
+  font-size: 2rem;
+  width: 18rem;
+  height: 7rem;
+  padding: 1rem;
+  border-radius: 15px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  background: linear-gradient(rgb(0, 45, 83), rgb(0, 45, 83));
+  box-shadow: .5rem .5rem 0 .1rem rgb(0, 45, 83);
+  transition: all .1s;
+  color: rgb(255, 255, 255, 0.5);
+
+  &:hover {
+    box-shadow: none;
+    margin-left: .5em;
+    margin-top: .5em;
+    color: rgb(255, 255, 255, 0.7);
+    border-color: rgb(255, 255, 255, 0.7);
+  }
+}

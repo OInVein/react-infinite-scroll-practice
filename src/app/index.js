@@ -1,14 +1,37 @@
-import styles from './index.module.scss';
-import { TV } from './components';
-import { DemoOnScrollEvent, DemoObserver } from './demos';
+import { Container } from './components';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+import { DemoOnScrollEvent, DemoObserver, Home } from './page';
+
+const routes = [
+  {
+    path: '/scrollEvent',
+    component: DemoOnScrollEvent,
+  },
+  {
+    path: '/observer',
+    component: DemoObserver,
+  },
+  {
+    path: '/',
+    component: Home,
+  },
+];
 
 const App = () => {
   return (
-    <div className={styles.container}>
-      <TV />
-      {/* <DemoOnScrollEvent /> */}
-      <DemoObserver />
-    </div>
+    <Container>
+      <Router>
+        <Switch>
+          {routes.map((route, i) => (
+            <Route key={i} {...route} />
+          ))}
+        </Switch>
+      </Router>
+    </Container>
   );
 };
 
