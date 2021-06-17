@@ -1,9 +1,8 @@
 import { useState, useEffect, useCallback } from 'react';
 
-const apiKey = "1b7ea9a241d0947887eae0f5afc9f580";
 const domain = 'https://api.themoviedb.org/3';
 
-const useQueryNowPlaying = () => {
+const useQueryNowPlaying = (apiKey) => {
   const [page, setPage] = useState(1);
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
