@@ -6,6 +6,7 @@ import {
   Route,
 } from "react-router-dom";
 import { DemoOnScrollEvent, DemoObserver, Home } from './page';
+import './styles/index.scss';
 
 const renderComponentWithProps = (props, Component) => {
   const { REACT_APP_API_KEY } = process.env;
