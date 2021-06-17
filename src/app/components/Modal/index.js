@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useOnClickOutside } from '../../hooks';
 import styles from './index.module.scss';
@@ -6,7 +6,14 @@ import styles from './index.module.scss';
 const Modal = ({ isOpen, infos, closeModal }) => {
   const { title, overview } = infos;
   const containerRef = useRef();
+  const contentRef = useRef();
   const display = isOpen ? '' : 'none';
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    contentRef.current.scrollTop = 0;
+  }, [isOpen]);
 
   useOnClickOutside(containerRef, closeModal);
 
@@ -17,7 +24,7 @@ const Modal = ({ isOpen, infos, closeModal }) => {
           <h1>{title}</h1>
           <div onClick={closeModal} className={styles.modalTitleClose} />
         </div>
-        <div className={styles.modalContent} dangerouslySetInnerHTML={{ __html: overview }} />
+        <div ref={contentRef} className={styles.modalContent} dangerouslySetInnerHTML={{ __html: overview }} />
       </div>
     </div>
   );
