@@ -5,7 +5,7 @@
 
   &::after {
     @extend .img-shape;
-    height: 17rem;
+    height: 18rem;
     content: '';
     background: rgba(246, 247, 249, 0.125);
   }
@@ -19,12 +19,12 @@
 
 @media screen and (max-width: 768px) {
   .shimmer::after {
-    height: 20rem;
+    height: 19rem;
   }
 }
 
 @media screen and (max-width: 480px) {
   .shimmer::after {
-    height: 20rem;
+    height: 24rem;
   }
 }
