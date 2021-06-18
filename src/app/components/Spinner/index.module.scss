@@ -11,7 +11,7 @@
     height: 5rem;
     position: relative;
     @extend .flex-center-all;
-    animation: rotate 1s infinite;
+    animation: rotate360 1s infinite;
 
     &Ball {
       width: 2rem;
