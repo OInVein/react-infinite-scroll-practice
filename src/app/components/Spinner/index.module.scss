@@ -1,4 +1,4 @@
-@import '../../styles/base';
+@import '../../styles/base', '../../styles/animation';
 
 .spinner {
   content: '';
@@ -38,17 +38,6 @@
     }
   }
 }
-
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 
 @media (max-width: 1024px) {
   .spinner {

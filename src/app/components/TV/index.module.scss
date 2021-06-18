@@ -1,4 +1,4 @@
-@import '../../styles/base';
+@import '../../styles/base', '../../styles/animation';
 
 .tv {
   width: 80vmin;
@@ -38,37 +38,6 @@
     border-radius: 50px;
     animation: screenShining 3s infinite;
     @extend .flex-center-all;
-  }
-}
-
-@keyframes screenShining {
-  from {
-    background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.3));
-  }
-  to {
-    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.4));
-    box-shadow: 0 0 1rem 1rem rgba(211, 211, 211, 0.1);
-  }
-}
-
-@keyframes tvShining {
-  0% {
-    background:linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
-  }
-  20% {
-    background:linear-gradient(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.12));
-  }
-  40% {
-    background:linear-gradient(rgba(0, 0, 0, 0.14), rgba(0, 0, 0, 0.14));
-  }
-  60% {
-    background:linear-gradient(rgba(0, 0, 0, 0.16), rgba(0, 0, 0, 0.16));
-  }
-  80% {
-    background:linear-gradient(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18));
-  }
-  100% {
-    background:linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
   }
 }
 
