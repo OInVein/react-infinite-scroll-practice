@@ -27,9 +27,9 @@ const Observer = ({ apiKey }) => {
     if (observer.current) observer.current.disconnect();
 
     observer.current = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting && !isDone) {
-        setPage(prevPage => ++prevPage);
-      }
+      if (!entries[0].isIntersecting || isDone) return;
+
+      setPage(prevPage => ++prevPage);
     });
 
     if (node) observer.current.observe(node);

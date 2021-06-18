@@ -1,6 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-
-const domain = 'https://api.themoviedb.org/3';
+import { genRequestUrl } from '../utils';
 
 const useQueryNowPlaying = (apiKey) => {
   const [page, setPage] = useState(1);
@@ -13,7 +12,7 @@ const useQueryNowPlaying = (apiKey) => {
 
     const getNowPlayingMovies = async () => {
       try {
-        const requestUrl = `${domain}/movie/now_playing?api_key=${apiKey}&language=zh-TW&page=${page}`;
+        const requestUrl = genRequestUrl(apiKey, page);
         const response = await fetch(requestUrl);
         const { results = [] } = await response.json();
 
