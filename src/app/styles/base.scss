@@ -5,7 +5,7 @@
 }
 
 .img-shape {
-  height: 17rem;
+  height: 100%;
   width: 100%;
   transition: all .1s;
   border-radius: 10px;
@@ -21,21 +21,18 @@
 
 @media (max-width: 1024px) {
   .img-shape {
-    height: 23rem;
     width: 90%;
   }
 }
 
 @media screen and (max-width: 768px) {
   .img-shape {
-    height: 20rem;
     width: 100%;
   }
 }
 
 @media screen and (max-width: 480px) {
   .img-shape {
-    height: 20rem;
     width: 85%;
   }
 }

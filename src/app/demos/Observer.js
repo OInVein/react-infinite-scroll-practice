@@ -39,14 +39,14 @@ const Observer = ({ apiKey }) => {
     const { id, poster_path: posterPath, title } = infos;
     const isLast = idx === movies.length - 1;
     return (
-      <div {...isLast && ({ ref: lastElement })} key={id}>
-        <MovieCard
-          title={title}
-          src={posterPath}
-          onClick={() => handleOnClickImg(infos)}
-          onError={handleErrorImg}
-        />
-      </div>
+      <MovieCard
+        key={id}
+        {...isLast && ({ ref: lastElement })}
+        title={title}
+        src={posterPath}
+        onClick={() => handleOnClickImg(infos)}
+        onError={handleErrorImg}
+      />
     );
   });
 

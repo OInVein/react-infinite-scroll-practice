@@ -1,9 +1,10 @@
+import { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import { genImagePath } from '../../utils';
 import styles from './index.module.scss';
 
-const MovieCard = ({ title, src, onClick, onError }) => (
-  <div className={styles.imgContainer}>
+const MovieCard = forwardRef(({ title, src, onClick, onError }, ref) => (
+  <div ref={ref} className={styles.imgContainer}>
     <div className={styles.easterEgg}>{title}</div>
     <img
       onClick={onClick}
@@ -13,7 +14,9 @@ const MovieCard = ({ title, src, onClick, onError }) => (
       onError={onError}
     />
   </div>
-);
+));
+
+MovieCard.displayName = 'movieCard';
 
 MovieCard.propTypes = {
   title: PropTypes.string.isRequired,

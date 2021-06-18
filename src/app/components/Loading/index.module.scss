@@ -5,8 +5,26 @@
 
   &::after {
     @extend .img-shape;
-
+    height: 17rem;
     content: '';
     background: rgba(246, 247, 249, 0.125);
+  }
+}
+
+@media (max-width: 1024px) {
+  .shimmer::after {
+    height: 23rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .shimmer::after {
+    height: 20rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .shimmer::after {
+    height: 20rem;
   }
 }
