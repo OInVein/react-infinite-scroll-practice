@@ -105,7 +105,13 @@
 }
 
 @media screen and (max-width: 480px) {
-  .modalContainer {
-    font-size: .75rem;
+  .modal {
+    &Container {
+      font-size: .75rem;
+    }
+
+    & > div {
+      height: calc(100vmax * .5);
+    }
   }
 }
