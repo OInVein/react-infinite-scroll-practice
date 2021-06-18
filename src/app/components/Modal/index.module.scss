@@ -19,7 +19,7 @@
   z-index: 20;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.5);
-  transition: all .3s;
+  transition: all .1s;
   @extend .flex-center-all;
 
   & > div {
@@ -74,7 +74,7 @@
 
         &::before, &::after {
           background: red;
-          transition: all .3s;
+          transition: all .1s;
         }
       }
 
