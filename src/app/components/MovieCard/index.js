@@ -9,7 +9,6 @@ const MovieCard = ({ title, src, onClick, onError }) => (
       onClick={onClick}
       src={genImagePath(src)}
       className={styles.img}
-      alt={title}
       loading="lazy"
       onError={onError}
     />
