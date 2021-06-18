@@ -4,16 +4,18 @@
   z-index: 20;
 
   @extend .flex-center-all;
-  flex-direction: column;
-  gap: 1.5rem;
+  position: relative;
+  width: calc(80vmin - 5em);
+  height: calc(60vmin - 5em);
 }
 
 .button {
   @extend .flex-center-all;
   cursor: pointer;
   font-size: 2rem;
-  width: 18rem;
-  height: 7rem;
+  width: 60%;
+  height: 40%;
+  position: absolute;
   padding: 1rem;
   border-radius: 15px;
   border: 2px solid rgba(255, 255, 255, 0.5);
@@ -22,11 +24,51 @@
   transition: all .1s;
   color: rgba(255, 255, 255, 0.5);
 
+  &:nth-child(1) {
+    top: 0rem;
+  }
+
+  &:nth-child(2) {
+    top: calc(50% + 1rem);
+  }
+
   &:hover {
     box-shadow: none;
     margin-left: .5em;
-    margin-top: .5em;
+    margin-top: .3em;
     color: rgba(255, 255, 255, 0.7);
     border-color: rgba(255, 255, 255, 0.7);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .button {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .button {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .home {
+    width: calc(80vmin - 2.5em);
+    height: calc(60vmin - 2.5em);
+  }
+  .button {
+    width: 100%;
+    height: 45%;
+    right: .25em;
+    &:nth-child(1) {
+      top: -1rem;
+    }
+
+    &:hover {
+      margin-right: -.5rem;
+      margin-top: .3em;
+    }
   }
 }
