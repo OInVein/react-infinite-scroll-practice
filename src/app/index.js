@@ -5,7 +5,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import { DemoOnScrollEvent, DemoObserver, Home } from './page';
+import { DemoOnScrollEvent, DemoObserver, Home } from './pages';
 import './styles/index.scss';
 
 const renderComponentWithProps = (props, Component) => {
