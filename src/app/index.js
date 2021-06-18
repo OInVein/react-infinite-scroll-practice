@@ -28,19 +28,16 @@ const routes = [
   },
 ];
 
-const App = () => {
-  const env = process.env;
-  return (
-    <Container>
-      <Router>
-        <Switch>
-          {routes.map((route, i) => (
-            <Route key={i} {...route} env={env} />
-          ))}
-        </Switch>
-      </Router>
-    </Container>
-  );
-};
+const App = () => (
+  <Container>
+    <Router>
+      <Switch>
+        {routes.map((route, i) => (
+          <Route key={i} {...route} />
+        ))}
+      </Switch>
+    </Router>
+  </Container>
+);
 
 export default App;
