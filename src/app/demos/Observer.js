@@ -1,7 +1,6 @@
 import { useRef, useCallback } from 'react';
 import { useQueryNowPlaying, useToggleModal } from '../hooks';
-import { Loading, MovieCard, Modal } from '../components';
-import styles from './index.module.scss';
+import { Loading, MovieCard, Modal, Content } from '../components';
 
 const Observer = () => {
   const {
@@ -51,7 +50,7 @@ const Observer = () => {
   });
 
   return (
-    <section className={styles.content}>
+    <Content>
       {renderMovies}
       {isLoading && <Loading page={page} items={movies} />}
       <Modal
@@ -59,7 +58,7 @@ const Observer = () => {
         isOpen={isOpenModal}
         closeModal={handleCloseModal}
       />
-    </section>
+    </Content>
   );
 };
 

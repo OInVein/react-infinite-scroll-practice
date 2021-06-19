@@ -1,4 +1,4 @@
-@import '../styles/base';
+@import '../../styles/base';
 
 .content {
   width: 100%;
@@ -26,11 +26,6 @@
       grid-column: span 3;
     }
   }
-
-  .imgBase {
-    height: 23rem;
-    width: 90%;
-  }
 }
 
 @media screen and (max-width: 768px) {
@@ -42,26 +37,6 @@
       grid-column: span 3;
     }
   }
-
-  .imgBase {
-    height: 20rem;
-    width: 100%;
-  }
-
-  .modal {
-    & > div {
-      width: 80%;
-      height: calc(100vmax * .5);
-    }
-
-    &Title {
-      font-size: 1.5em;
-    }
-
-    &Content {
-      font-size: 2em;
-    }
-  }
 }
 
 @media screen and (max-width: 480px) {
@@ -71,26 +46,6 @@
     &::after {
       grid-row: span 2;
       grid-column: span 1;
-    }
-  }
-
-  .imgBase {
-    height: 20rem;
-    width: 85%;
-  }
-
-  .modal {
-    & > div {
-      width: 80%;
-      height: calc(100vmax * .5);
-    }
-
-    &Title {
-      font-size: .9em;
-    }
-
-    &Content {
-      font-size: 1.25em;
     }
   }
 }

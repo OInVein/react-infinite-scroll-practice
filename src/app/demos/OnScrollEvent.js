@@ -1,6 +1,5 @@
 import { useQueryNowPlaying, useToggleModal } from '../hooks';
-import { Loading, MovieCard, Modal } from '../components';
-import styles from './index.module.scss';
+import { Loading, MovieCard, Modal, Content } from '../components';
 
 const OnScrollEvent = () => {
   const {
@@ -50,7 +49,7 @@ const OnScrollEvent = () => {
   });
 
   return (
-    <section onScroll={onScroll} className={styles.content}>
+    <Content onScroll={onScroll}>
       {renderMovies}
       {isLoading && <Loading page={page} items={movies} />}
       <Modal
@@ -58,7 +57,7 @@ const OnScrollEvent = () => {
         isOpen={isOpenModal}
         closeModal={handleCloseModal}
       />
-    </section>
+    </Content>
   );
 };
 

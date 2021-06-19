@@ -99,8 +99,23 @@
 }
 
 @media screen and (max-width: 768px) {
-  .modalContainer {
-    font-size: .8rem;
+  .modal {
+    &Container {
+      font-size: .8rem;
+    }
+
+    &Content {
+      font-size: 2em;
+    }
+
+    &Title {
+      font-size: 1.5em;
+    }
+
+    & > div {
+      width: 80%;
+      height: calc(100vmax * .5);
+    }
   }
 }
 
@@ -110,7 +125,16 @@
       font-size: .75rem;
     }
 
+    &Title {
+      font-size: .9em;
+    }
+
+    &Content {
+      font-size: 1.25em;
+    }
+
     & > div {
+      width: 80%;
       height: calc(100vmax * .5);
     }
   }
