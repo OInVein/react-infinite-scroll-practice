@@ -9,14 +9,16 @@
 .img {
   @extend .img-shape;
 
-  &:hover {
+  &Container {
+    @extend .img-container;
+  }
+}
+
+@media (hover: hover) {
+  .img:hover {
     transform: scale(1.1);
     transition: all .1s;
     box-shadow: 0 0 .2rem .2rem #0090d8;
     cursor: pointer;
-  }
-
-  &Container {
-    @extend .img-container;
   }
 }
