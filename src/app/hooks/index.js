@@ -1,4 +1,5 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
+import { isOnTouchEnable } from '../constants';
 import { genRequestUrl } from '../utils';
 
 const useQueryNowPlaying = () => {
@@ -63,6 +64,7 @@ const useQueryNowPlaying = () => {
 };
 
 const useToggleModal = () => {
+  const chosenMovieImgRef = useRef();
   const [chosenMovie, setChosenMovie] = useState({});
   const [isOpenModal, setIsOpenModal] = useState(false);
 
@@ -83,9 +85,15 @@ const useToggleModal = () => {
     };
   }, [isOpenModal]);
 
-  const handleOnClickImg = (movieInfos) => {
+  const handleOnClickImg = (e, movieInfos) => {
     setIsOpenModal(true);
     setChosenMovie(movieInfos);
+
+    if (!isOnTouchEnable) return;
+
+    const { target: focusImgElement } = e;
+    focusImgElement.classList.add('img-enlarge');
+    chosenMovieImgRef.current = focusImgElement;
   };
 
   const handleErrorImg = (e) => {
@@ -93,7 +101,16 @@ const useToggleModal = () => {
     currentTarget.parentElement.style.display = 'none';
   }
 
-  const handleCloseModal = useCallback(e => setIsOpenModal(false), []);
+  const handleCloseModal = useCallback(() => {
+    setIsOpenModal(false);
+
+    if (!isOnTouchEnable) return;
+
+    const { current: focusImgElement } = chosenMovieImgRef;
+    if (!focusImgElement) return;
+
+    focusImgElement.classList.remove('img-enlarge');
+  }, []);
 
   return {
     chosenMovie,

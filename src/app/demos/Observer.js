@@ -43,7 +43,7 @@ const Observer = () => {
         {...isLast && ({ ref: lastElement })}
         title={title}
         src={posterPath}
-        onClick={() => handleOnClickImg(infos)}
+        onClick={(e) => handleOnClickImg(e, infos)}
         onError={handleErrorImg}
       />
     );

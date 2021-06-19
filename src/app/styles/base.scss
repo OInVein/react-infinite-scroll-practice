@@ -6,6 +6,15 @@
   align-items: center;
 }
 
+@mixin img-hover-effect {
+  transform: scale(1.1);
+  box-shadow: 0 0 .2rem .2rem #0090d8;
+}
+
+.img-enlarge {
+  @include img-hover-effect;
+}
+
 .img-shape {
   height: 100%;
   width: 100%;

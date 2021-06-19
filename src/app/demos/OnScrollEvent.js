@@ -42,7 +42,7 @@ const OnScrollEvent = () => {
         key={id}
         title={title}
         src={posterPath}
-        onClick={() => handleOnClickImg(infos)}
+        onClick={(e) => handleOnClickImg(e, infos)}
         onError={handleErrorImg}
       />
     );
