@@ -11,19 +11,19 @@
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: $lg) {
   .shimmer::after {
     height: 23rem;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: $md) {
   .shimmer::after {
     height: 19rem;
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: $xs) {
   .shimmer::after {
     height: 24rem;
   }

@@ -1,3 +1,5 @@
+@import './rwd';
+
 .flex-center-all {
   display: flex;
   justify-content: center;
@@ -19,19 +21,19 @@
   @extend .flex-center-all;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: $lg) {
   .img-shape {
     width: 90%;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: $md) {
   .img-shape {
     width: 100%;
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: $xs) {
   .img-shape {
     width: 85%;
   }

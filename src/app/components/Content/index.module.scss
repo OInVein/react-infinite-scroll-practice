@@ -17,7 +17,7 @@
   }
 }
 
-@media (max-width: 1024px) {
+@media screen and (max-width: $lg) {
   .content {
     grid-template-columns: repeat(3, minmax(0, 1fr));
 
@@ -28,7 +28,7 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: $md) {
   .content {
     grid-template-columns: repeat(3, minmax(0, 1fr));
 
@@ -39,7 +39,7 @@
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: $xs) {
   .content {
     grid-template-columns: repeat(1, minmax(0, 1fr));
 

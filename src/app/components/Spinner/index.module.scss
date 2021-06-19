@@ -40,21 +40,21 @@
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: $lg) {
   .spinner {
     grid-row: span 2;
     grid-column: span 3;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: $md) {
   .spinner {
     grid-row: span 2;
     grid-column: span 3;
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: $xs) {
   .spinner {
     grid-row: span 2;
     grid-column: span 1;

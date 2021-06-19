@@ -41,7 +41,7 @@
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: $xs) {
   .tv {
     padding: 2.5rem;
     border-radius: 25px;
