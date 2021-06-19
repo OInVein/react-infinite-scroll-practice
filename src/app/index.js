@@ -1,4 +1,3 @@
-/* eslint-disable react/display-name */
 import { Container } from './components';
 import {
   BrowserRouter as Router,
@@ -8,19 +7,14 @@ import {
 import { DemoOnScrollEvent, DemoObserver, Home } from './pages';
 import './styles/index.scss';
 
-const renderComponentWithProps = (props, Component) => {
-  const { REACT_APP_API_KEY } = process.env;
-  return <Component apiKey={REACT_APP_API_KEY} {...props} />;
-};
-
 const routes = [
   {
     path: '/scrollEvent',
-    render: (routeProps) => renderComponentWithProps(routeProps, DemoOnScrollEvent),
+    component: DemoOnScrollEvent,
   },
   {
     path: '/observer',
-    render: (routeProps) => renderComponentWithProps(routeProps, DemoObserver),
+    component: DemoObserver,
   },
   {
     path: '/',

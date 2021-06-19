@@ -1,16 +1,15 @@
-import PropTypes from 'prop-types';
 import { useQueryNowPlaying, useToggleModal } from '../hooks';
 import { Loading, MovieCard, Modal } from '../components';
 import styles from './index.module.scss';
 
-const OnScrollEvent = ({ apiKey }) => {
+const OnScrollEvent = () => {
   const {
     isLoading,
     page,
     setPage,
     isDone,
     movies,
-  } = useQueryNowPlaying(apiKey);
+  } = useQueryNowPlaying();
   const {
     isOpenModal,
     chosenMovie,
@@ -61,10 +60,6 @@ const OnScrollEvent = ({ apiKey }) => {
       />
     </section>
   );
-};
-
-OnScrollEvent.propTypes = {
-  apiKey: PropTypes.string.isRequired,
 };
 
 export default OnScrollEvent;

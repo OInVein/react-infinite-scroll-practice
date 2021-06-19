@@ -1,17 +1,16 @@
-import PropTypes from 'prop-types';
 import { useRef, useCallback } from 'react';
 import { useQueryNowPlaying, useToggleModal } from '../hooks';
 import { Loading, MovieCard, Modal } from '../components';
 import styles from './index.module.scss';
 
-const Observer = ({ apiKey }) => {
+const Observer = () => {
   const {
     isLoading,
     page,
     setPage,
     isDone,
     movies,
-  } = useQueryNowPlaying(apiKey);
+  } = useQueryNowPlaying();
   const {
     isOpenModal,
     chosenMovie,
@@ -62,10 +61,6 @@ const Observer = ({ apiKey }) => {
       />
     </section>
   );
-};
-
-Observer.propTypes = {
-  apiKey: PropTypes.string.isRequired,
 };
 
 export default Observer;

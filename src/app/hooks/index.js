@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { genRequestUrl } from '../utils';
 
-const useQueryNowPlaying = (apiKey) => {
+const useQueryNowPlaying = () => {
   const [page, setPage] = useState(1);
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -12,7 +12,7 @@ const useQueryNowPlaying = (apiKey) => {
 
     const getNowPlayingMovies = async () => {
       try {
-        const requestUrl = genRequestUrl(apiKey, page);
+        const requestUrl = genRequestUrl(page);
         const response = await fetch(requestUrl);
         const { results = [] } = await response.json();
 
@@ -31,6 +31,7 @@ const useQueryNowPlaying = (apiKey) => {
               const hasDulplicateItem = acc.some(({ id, title }) => (
                 `${id}${title}` === `${currId}${currTitle}`
               ));
+
               if (!currOverview || !posterPath || hasDulplicateItem) {
                 return acc;
               }
@@ -38,6 +39,7 @@ const useQueryNowPlaying = (apiKey) => {
               acc.push(curr);
               return acc;
             }, []);
+
             return newMovies;
           });
         }
@@ -49,7 +51,6 @@ const useQueryNowPlaying = (apiKey) => {
     };
 
     getNowPlayingMovies();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page]);
 
   return {

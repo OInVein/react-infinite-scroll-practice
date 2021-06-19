@@ -5,7 +5,7 @@ const TV = () => (
     <div className={styles.tvBtn} />
     <div className={styles.tvBtn} />
     <div className={styles.tvBtn} />
-    <div className={styles.tvScreen}></div>
+    <div className={styles.tvScreen} />
   </div>
 );
 
