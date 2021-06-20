@@ -30,7 +30,7 @@
   @extend .flex-center-all;
 }
 
-@media (max-width: $lg) {
+@media screen and (max-width: $lg) {
   .img-shape {
     width: 90%;
   }

@@ -1,26 +1,33 @@
 @import '../../styles/base';
 
+@mixin shimmer-aspect-ratio($width: 100%, $paddingTop: 145%) {
+  width: calc(#{$width} - .3rem);
+  padding-top: calc(#{$paddingTop} - .3rem);
+}
+
 .shimmer {
   @extend .img-container, .img-shape;
   background: rgba(246, 247, 249, 0.125);
-  padding-top: 149%;
   margin: auto;
+  @include shimmer-aspect-ratio;
 }
 
-@media (max-width: $lg) {
+@media screen and (max-width: $lg) {
   .shimmer {
-    padding-top: 130%;
+    width: calc(90% - .3rem);
+    padding-top: calc(130% - .3rem);
+    @include shimmer-aspect-ratio(90%, 130%);
   }
 }
 
 @media screen and (max-width: $md) {
   .shimmer {
-    padding-top: 149%;
+    @include shimmer-aspect-ratio;
   }
 }
 
 @media screen and (max-width: $xs) {
   .shimmer {
-    padding-top: 124%;
+    @include shimmer-aspect-ratio(100%, 124%);
   }
 }
