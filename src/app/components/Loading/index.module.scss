@@ -1,4 +1,4 @@
-@import '../../styles/base';
+@import '../../styles/base', '../../styles/animation';
 
 @mixin shimmer-aspect-ratio($width: 100%, $paddingTop: 145%) {
   width: calc(#{$width} - #{$img-padding});
@@ -13,16 +13,6 @@
   background-size: 1000px 100%;
   margin: auto;
   @include shimmer-aspect-ratio;
-}
-
-@keyframes shimmerLoading {
-  from {
-    background-position: -1000px 0;
-  }
-
-  to {
-    background-position: 1000px 0;
-  }
 }
 
 @media screen and (max-width: $lg) {
