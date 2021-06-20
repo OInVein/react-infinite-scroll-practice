@@ -1,8 +1,8 @@
 @import '../../styles/base';
 
 @mixin shimmer-aspect-ratio($width: 100%, $paddingTop: 145%) {
-  width: calc(#{$width} - $img-padding);
-  padding-top: calc(#{$paddingTop} - $img-padding);
+  width: calc(#{$width} - #{$img-padding});
+  padding-top: calc(#{$paddingTop} - #{$img-padding});
 }
 
 .shimmer {
