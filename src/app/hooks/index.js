@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { isOnTouchEnable } from '../constants';
 import { genRequestUrl } from '../utils';
 
 const useQueryNowPlaying = () => {
@@ -75,7 +74,7 @@ const useToggleModal = () => {
       const { keyCode } = e;
       if (keyCode !== 27) return;
 
-      setIsOpenModal(false);
+      handleCloseModal();
     };
 
     document.addEventListener('keyup', onKeyUp);
@@ -83,13 +82,12 @@ const useToggleModal = () => {
     return () => {
       document.removeEventListener('keyup', onKeyUp);
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpenModal]);
 
   const handleOnClickImg = (e, movieInfos) => {
     setIsOpenModal(true);
     setChosenMovie(movieInfos);
-
-    if (!isOnTouchEnable) return;
 
     const { target: focusImgElement } = e;
     focusImgElement.classList.add('img-enlarge');
@@ -103,8 +101,6 @@ const useToggleModal = () => {
 
   const handleCloseModal = useCallback(() => {
     setIsOpenModal(false);
-
-    if (!isOnTouchEnable) return;
 
     const { current: focusImgElement } = chosenMovieImgRef;
     if (!focusImgElement) return;
