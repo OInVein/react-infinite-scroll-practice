@@ -26,6 +26,6 @@
 
 @media screen and (max-width: $xs) {
   .shimmer {
-    @include shimmer-aspect-ratio(100%, 124%);
+    @include shimmer-aspect-ratio(85%, 124%);
   }
 }
