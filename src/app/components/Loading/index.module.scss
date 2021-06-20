@@ -7,9 +7,22 @@
 
 .shimmer {
   @extend .img-container, .img-shape;
-  background: rgba(246, 247, 249, 0.125);
+  background-color: rgba(0, 0, 0, .1);
+  animation: shimmerLoading 1s infinite forwards;
+  background-image: linear-gradient(to right, rgba(220, 220, 220, .2) 0%, rgba(230, 230, 230, .2) 10%, rgba(240, 240, 240, .2) 20%, rgba(230, 230, 230, .2) 30%, rgba(220, 220, 220, .2) 50%, rgba(220, 220, 220, .2) 100%);
+  background-size: 1000px 100%;
   margin: auto;
   @include shimmer-aspect-ratio;
+}
+
+@keyframes shimmerLoading {
+  from {
+    background-position: -1000px 0;
+  }
+
+  to {
+    background-position: 1000px 0;
+  }
 }
 
 @media screen and (max-width: $lg) {
