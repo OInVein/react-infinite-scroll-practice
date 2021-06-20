@@ -1,30 +1,26 @@
 @import '../../styles/base';
 
 .shimmer {
-  @extend .img-container;
-
-  &::after {
-    @extend .img-shape;
-    height: 18rem;
-    content: '';
-    background: rgba(246, 247, 249, 0.125);
-  }
+  @extend .img-container, .img-shape;
+  background: rgba(246, 247, 249, 0.125);
+  padding-top: 149%;
+  margin: auto;
 }
 
 @media (max-width: $lg) {
-  .shimmer::after {
-    height: 23rem;
+  .shimmer {
+    padding-top: 130%;
   }
 }
 
 @media screen and (max-width: $md) {
-  .shimmer::after {
-    height: 19rem;
+  .shimmer {
+    padding-top: 149%;
   }
 }
 
 @media screen and (max-width: $xs) {
-  .shimmer::after {
-    height: 24rem;
+  .shimmer {
+    padding-top: 124%;
   }
 }
