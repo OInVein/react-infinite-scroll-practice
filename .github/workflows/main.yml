@@ -1,8 +1,8 @@
 name: Delete Environment (default settings)
 
 on:
-  delete:
-    branches-ignore:
+  push:
+    branches:
       - master
 
 jobs:
