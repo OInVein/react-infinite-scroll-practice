@@ -1,6 +1,6 @@
 # 🎥🎥 React Infinite Scroll Practice 📺📺
 
-demo 👉👉👉 https://react-infinite-scroll-practice.herokuapp.com/
+demo 👉👉👉 https://oiv-infinite-scroll-practice.herokuapp.com/
 
 ## 1) Install
 
