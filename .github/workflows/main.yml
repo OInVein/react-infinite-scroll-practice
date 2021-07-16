@@ -12,5 +12,5 @@ jobs:
       - uses: strumwolf/delete-deployment-environment@v2
         with:
           # ⚠️ The provided token needs permission for admin write:org
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: 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
           environment: react-infinite-scroll-practice
