@@ -2,7 +2,6 @@
 
 demo 👉👉👉 https://oiv-infinite-scroll-practice.herokuapp.com/
 
-![image](https://github.com/OInVein/react-infinite-scroll-practice/blob/master/demo.gif)
 
 ## 1) Install
 
