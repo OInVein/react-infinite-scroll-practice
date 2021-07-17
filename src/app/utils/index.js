@@ -1,4 +1,4 @@
-import { REACT_APP_API_KEY } from '../constants';
+const { REACT_APP_API_KEY } = process.env;
 
 const genImagePath = path => `https://image.tmdb.org/t/p/w300/${path}`;
 
