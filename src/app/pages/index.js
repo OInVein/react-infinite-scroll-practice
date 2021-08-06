@@ -1,4 +1,2 @@
-import Home from './Home';
-import { DemoObserver, DemoOnScrollEvent } from '../demos';
-
-export { Home, DemoObserver, DemoOnScrollEvent };
+export { default as Home } from './Home';
+export { DemoObserver, DemoOnScrollEvent } from '../demos';
