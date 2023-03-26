@@ -1,15 +1,13 @@
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import styles from './index.module.scss';
 
 const Home = () => {
-  const history = useHistory();
-
-  const navigateTo = path => history.push(path);
+  const navigate = useNavigate();
 
   return (
     <div className={styles.home}>
-      <div className={styles.button} onClick={() => navigateTo('/scrollEvent')}>OnScrollEvent</div>
-      <div className={styles.button} onClick={() => navigateTo('/observer')}>Observer</div>
+      <div className={styles.button} onClick={() => navigate('/scrollEvent')}>OnScrollEvent</div>
+      <div className={styles.button} onClick={() => navigate('/observer')}>Observer</div>
     </div>
   );
 };

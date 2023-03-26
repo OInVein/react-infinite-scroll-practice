@@ -1,7 +1,7 @@
 import { Container } from './components';
 import {
   BrowserRouter as Router,
-  Switch,
+  Routes,
   Route,
 } from 'react-router-dom';
 import { DemoOnScrollEvent, DemoObserver, Home } from './pages';
@@ -10,26 +10,26 @@ import './styles/index.scss';
 const routes = [
   {
     path: '/scrollEvent',
-    component: DemoOnScrollEvent,
+    element: <DemoOnScrollEvent />,
   },
   {
     path: '/observer',
-    component: DemoObserver,
+    element: <DemoObserver />,
   },
   {
     path: '/',
-    component: Home,
+    element: <Home />,
   },
 ];
 
 const App = () => (
   <Container>
     <Router>
-      <Switch>
+      <Routes>
         {routes.map((route, i) => (
           <Route key={i} {...route} />
         ))}
-      </Switch>
+      </Routes>
     </Router>
   </Container>
 );
