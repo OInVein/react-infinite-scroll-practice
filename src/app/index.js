@@ -1,9 +1,5 @@
 import { Container } from './components';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { DemoOnScrollEvent, DemoObserver, Home } from './pages';
 import './styles/index.scss';
 

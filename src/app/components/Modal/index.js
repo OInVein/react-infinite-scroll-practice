@@ -24,7 +24,11 @@ const Modal = ({ isOpen, infos, closeModal }) => {
           <h1>{title}</h1>
           <div onClick={closeModal} className={styles.modalTitleClose} />
         </div>
-        <div ref={contentRef} className={styles.modalContent} dangerouslySetInnerHTML={{ __html: overview }} />
+        <div
+          ref={contentRef}
+          className={styles.modalContent}
+          dangerouslySetInnerHTML={{ __html: overview }}
+        />
       </div>
     </div>
   );

@@ -28,9 +28,9 @@ const useQueryNowPlaying = () => {
                 poster_path: posterPath,
               } = curr;
 
-              const hasDulplicateItem = acc.some(({ id, title }) => (
-                `${id}${title}` === `${currId}${currTitle}`
-              ));
+              const hasDulplicateItem = acc.some(
+                ({ id, title }) => `${id}${title}` === `${currId}${currTitle}`,
+              );
 
               if (!currOverview || !posterPath || hasDulplicateItem) {
                 return acc;
@@ -82,7 +82,7 @@ const useToggleModal = () => {
     return () => {
       document.removeEventListener('keyup', onKeyUp);
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpenModal]);
 
   const handleOnClickImg = (e, movieInfos) => {
@@ -97,7 +97,7 @@ const useToggleModal = () => {
   const handleErrorImg = (e) => {
     const { currentTarget } = e;
     currentTarget.parentElement.style.display = 'none';
-  }
+  };
 
   const handleCloseModal = useCallback(() => {
     setIsOpenModal(false);

@@ -6,8 +6,12 @@ const Home = () => {
 
   return (
     <div className={styles.home}>
-      <div className={styles.button} onClick={() => navigate('/scrollEvent')}>OnScrollEvent</div>
-      <div className={styles.button} onClick={() => navigate('/observer')}>Observer</div>
+      <div className={styles.button} onClick={() => navigate('/scrollEvent')}>
+        OnScrollEvent
+      </div>
+      <div className={styles.button} onClick={() => navigate('/observer')}>
+        Observer
+      </div>
     </div>
   );
 };

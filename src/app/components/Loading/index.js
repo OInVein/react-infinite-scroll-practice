@@ -6,11 +6,9 @@ const Loading = ({ items, page }) => {
   const renderShimmer = (() => {
     if (page !== 1) return;
 
-    const shimmerSize = 12 - items.length % 6;
+    const shimmerSize = 12 - (items.length % 6);
     const shimmerArray = [...new Array(shimmerSize)];
-    const shimmer = shimmerArray.map((_, idx) => (
-      <div key={idx} className={styles.shimmer} />
-    ));
+    const shimmer = shimmerArray.map((_, idx) => <div key={idx} className={styles.shimmer} />);
     return shimmer;
   })();
 
