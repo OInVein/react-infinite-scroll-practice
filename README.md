@@ -1,6 +1,6 @@
 # 🎥🎥 React Infinite Scroll Practice 📺📺
 
-demo 👉👉👉 https://chipper-otter-aee5f2.netlify.app
+demo 👉👉👉 https://oiv-infinite-scroll.netlify.app/
 
 
 ## 1) Install
