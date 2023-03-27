@@ -23,7 +23,7 @@ const Observer = () => {
       if (node) observer.current.observe(node);
       // eslint-disable-next-line react-hooks/exhaustive-deps
     },
-    [isLoading, isDone],
+    [isLoading, isDone, setPage],
   );
 
   const renderMovies = movies.map((infos, idx) => {
